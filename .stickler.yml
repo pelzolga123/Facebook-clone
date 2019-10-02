@@ -3,8 +3,8 @@ linters:
     display_cop_names: true
 files:
   ignore:
-    - "bin/*"
-    - "db/*"
-    - "config/*"
+    - "fb-clone/bin/*"
+    - "fb-clone/db/*"
+    - "fb-clone/config/*"
     - "Guardfile"
     - "Rakefile"

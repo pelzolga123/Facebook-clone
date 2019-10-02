@@ -1,8 +1,8 @@
 AllCops:
   Exclude:
-    - "bin/*"
-    - "db/*"
-    - "config/*"
+    - "fb-clone/bin/*"
+    - "fb-clone/db/*"
+    - "fb-clone/config/*"
     - "Guardfile"
     - "Rakefile"
   DisplayCopNames: true
@@ -18,7 +18,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ['describe','feature','context']
+  ExcludedMethods: ['describe','feature','context','configure']
 
 Style/Documentation:
   Enabled: false
