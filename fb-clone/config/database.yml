@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: odin-facebook_development
+  database: fb_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: odin-facebook_test
+  database: fb_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: odin-facebook_production
-  username: odin-facebook
-  password: <%= ENV['ODIN-FACEBOOK_DATABASE_PASSWORD'] %>
+  database: fb_production
+  username: fb
+  password: <%= ENV['FB_DATABASE_PASSWORD'] %>
