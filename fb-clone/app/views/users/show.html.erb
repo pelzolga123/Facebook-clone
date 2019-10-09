@@ -1,0 +1,30 @@
+<% provide(:title, @user.first_name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= link_to "#{@user.first_name}" ,profile_path%>
+        <h3>Posts (<%= @user.posts.count %>)</h3>
+      </h1>
+      <% if @user != current_user %>
+        <%= link_to "Send friend request" ,'#' =%>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render "posts/form", post: @post%>
+  </div>
+  <aside class="col-md-4">
+  </aside>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%- #will_paginate @posts -%>
+    <% end %>
+  </div>
+  <%= link_to 'Back', posts_path %>
+</div>

@@ -1,0 +1,11 @@
+
+ 
+    <section>
+    <h1>
+      <%= link_to "#{@user.first_name}" ,@user%> <br>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
+    </h1>
+    <% if @user != current_user %>
+      <%= link_to "Send friend request" ,'#' =%>
+    <% end %>
+  </section>

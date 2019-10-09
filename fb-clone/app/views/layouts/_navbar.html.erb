@@ -1,0 +1,14 @@
+<header class="navbar navbar-light" style="background-color: grey;">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav ">
+        <% if user_signed_in? %>
+          <li><%= link_to 'sign_out', destroy_user_session_path, :method => 'delete' %></li> 
+        <% else %>
+          <li><%= link_to 'sign_in' , new_user_session_path %></li> 
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+

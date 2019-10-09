@@ -1,0 +1,13 @@
+ 
+<% provide(:title, @user.first_name) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <%= render 'user' =%>
+    <p>Name  <%= @user.first_name%></p>
+      <p>Date of birth:  <%= @user.date_of_birth%></p>
+      <p>Gender:  <%= @user.gender%></p>
+  </aside>
+</div>
+<%= link_to 'Edit', edit_user_registration_path(@user)%> |
+<%= link_to 'Back', @user %>

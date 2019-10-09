@@ -1,0 +1,15 @@
+<% provide(:title, "Users") %>
+
+  <% @users.each do |user| %>
+    <ul>
+      <span class="user"><%= user.first_name %></span>
+   
+      <br>
+      <% if current_user == user %>
+        <%= link_to 'New Post', new_post_path %>
+
+      <% else %>
+        <%= link_to 'Send friend request', "#"%> |
+      <% end %>
+    </ul>
+  <% end %>
