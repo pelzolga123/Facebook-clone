@@ -2,6 +2,7 @@
 
   <% @users.each do |user| %>
     <ul>
+    <div class="gravatar" style="background:transparent url(<%= gravatar_image_url(user.email.gsub('spam', 'mdeering'), size: 100) %>) 0px 0px no-repeat; width:100px; height:100px;"></div>
       <span class="user"><%= user.first_name %></span>
    
       <br>

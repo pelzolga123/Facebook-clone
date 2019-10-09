@@ -1,6 +1,7 @@
 
  
     <section>
+    <div class="gravatar" style="background:transparent url(<%= gravatar_image_url('spam@spam.com'.gsub('spam', 'mdeering'), size: 100) %>) 0px 0px no-repeat; width:100px; height:100px;"></div>
     <h1>
       <%= link_to "#{@user.first_name}" ,@user%> <br>
       <h3>Posts (<%= @user.posts.count %>)</h3>
