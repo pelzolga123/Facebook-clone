@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    content { "MyText" }
-    user { nil }
+    user
+    content { 'There are five steps involved in setting up a data factory.' }
   end
 end
