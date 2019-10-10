@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'LogIns', type: :feature do
-
   scenario 'valid inputs' do
     User.create!(email: 'john@example.com', password: 'foobar')
     visit user_session_path

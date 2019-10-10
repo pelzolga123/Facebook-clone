@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
-
   context 'Validation tests' do
     let(:user) { build(:user) }
 
@@ -28,5 +26,4 @@ RSpec.describe User, type: :model do
       end
     end
   end
-
 end
