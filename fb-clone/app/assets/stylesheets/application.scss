@@ -1,0 +1,102 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ #error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+      font-size: 12px;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+
+ .form-group{
+   margin-right: 5px;
+ }
+ .form-row{
+  display:flex;
+   select{
+     margin-right: 5px;
+   }
+   .name{
+     margin-right: 5px;
+   }
+ }
+ .alerts{
+   margin-top: 10px;
+   margin-bottom:5px;
+ }
+
+
+ .card{
+    border: 1px solid #DCDCDC;
+    margin:10px 10px;
+    border-radius: 4px;
+    .card-body{
+        padding: 10px 10px;
+       
+      a{
+          color: #fff;
+      }  
+    }
+  }
+
+
+ .main-user{
+    .gravatar{
+        margin-right: auto;
+        margin-left: auto;
+      }
+    h2{
+        text-align:center;
+    }  
+    button{
+        a{
+            color:#fff;
+        }
+    }
+ }
+
+ .posts-header{
+    text-align: center;
+    border-bottom:1px solid #999;
+  }
+
+.navbar-brand {
+    color:#fff;
+  }
+.navbar-nav{
+    list-style:none;
+   
+ .nav-link{
+     color:#fff;
+     float: left;
+     padding: 15px 15px;
+     font-size: 16px;
+     line-height: 20px;
+     height: 50px;
+ } 
+}
+
+.users{
+    display:flex;
+    margin: 10px 10px;
+    .user{
+        margin-left:10px;
+    }
+}
+.prof{
+    a{
+        color:#fff;
+    }
+}
+.post{
+    margin-top:10px;
+}

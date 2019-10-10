@@ -2,6 +2,6 @@
   <%= form_for @post do |f|%>
     <%= f.label :content, 'Edit post' %>
     <%= f.text_field :content, value: @post.content, class: 'form-control' %><br>
-    <%= f.submit 'Edit', class: 'btn btn-info btn-block' %>
+    <%= f.submit 'Edit', :class => 'btn btn-primary' %>
   <% end %>
 </div>

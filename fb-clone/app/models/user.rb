@@ -5,4 +5,9 @@ class User < ApplicationRecord
         :rememberable, :validatable
 
   has_many :posts, foreign_key: :user_id, dependent: :destroy
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :date_of_birth, presence: true
+  validates :gender, presence: true
 end

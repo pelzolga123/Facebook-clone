@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   authenticated :user do
       root 'posts#index', as: :authenticated_root
   end
+
+  
   resources :users, only: %i[index show]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
 

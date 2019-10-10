@@ -7,11 +7,10 @@
         <%= link_to "#{@user.first_name}" ,profile_path%>
         <h3>Posts (<%= @user.posts.count %>)</h3>
       </h1>
-      <% if @user != current_user %>
-        <%= link_to "Send friend request" ,'#' =%>
-      <% end %>
+    
     </section>
   </aside>
+  
   <div class="col-md-8">
     <%= render "posts/form", post: @post%>
   </div>

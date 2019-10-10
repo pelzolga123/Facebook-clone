@@ -45,10 +45,16 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
+    autoprefixer-rails (9.6.4)
+      execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     bootstrap-sass (3.2.0.4)
       sass (~> 3.2)
     builder (3.2.3)
@@ -172,6 +178,7 @@ GEM
       omniauth (~> 1.9)
     orm_adapter (0.5.0)
     pg (1.1.4)
+    popper_js (1.14.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -295,6 +302,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bootstrap (~> 4.0.0)
   bootstrap-sass (~> 3.2.0)
   byebug
   capybara

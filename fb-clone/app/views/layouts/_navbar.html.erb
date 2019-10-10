@@ -1,14 +1,18 @@
-<header class="navbar navbar-light" style="background-color: grey;">
-  <div class="container">
-    <nav>
-      <ul class="nav navbar-nav ">
+
+    <nav class = 'navbar navbar-dark bg-primary'>
+      <a class="navbar-brand" href="#">Facebook</a>
+
+      <ul class='navbar-nav mr-auto'>
         <% if user_signed_in? %>
-          <li><%= link_to 'sign_out', destroy_user_session_path, :method => 'delete' %></li> 
+          <li class="nav-item active"><%= link_to 'Users', :users, :class=> "nav-link" %></li> 
+          <li class="nav-item active"><%= link_to 'My profile',profile_path(current_user), :class=> "nav-link" %></li> 
+          <li class="nav-item active"><%= link_to 'Posts',:posts, :class=> "nav-link" %></li> 
+          <li class="nav-item active"><%= link_to 'Sign out', destroy_user_session_path, :method => 'delete', :class=> "nav-link" %></li> 
         <% else %>
-          <li><%= link_to 'sign_in' , new_user_session_path %></li> 
+          <li class="nav-item active"><%= link_to 'Log in' , new_user_session_path, :class=> "nav-link" %></li> 
+          <li class="nav-item active"><%= link_to 'Sign up' , new_registration_path(resource_name), :class=> "nav-link" %></li>
         <% end %>
       </ul>
     </nav>
-  </div>
-</header>
+
 

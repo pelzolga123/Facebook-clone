@@ -1,16 +1,9 @@
 <% provide(:title, "Users") %>
 
   <% @users.each do |user| %>
-    <ul>
+   <div class='users'>
     <div class="gravatar" style="background:transparent url(<%= gravatar_image_url(user.email.gsub('spam', 'mdeering'), size: 100) %>) 0px 0px no-repeat; width:100px; height:100px;"></div>
-      <span class="user"><%= user.first_name %></span>
-   
+      <h2 class="user"><%= user.first_name %></h2>
       <br>
-      <% if current_user == user %>
-        <%= link_to 'New Post', new_post_path %>
-
-      <% else %>
-        <%= link_to 'Send friend request', "#"%> |
-      <% end %>
-    </ul>
+    </div>    
   <% end %>
