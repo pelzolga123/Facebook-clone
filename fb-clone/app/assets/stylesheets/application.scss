@@ -100,3 +100,14 @@
 .post{
     margin-top:10px;
 }
+.info{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+  p{
+    color:#777;
+    font-size:16px;
+  }
+}

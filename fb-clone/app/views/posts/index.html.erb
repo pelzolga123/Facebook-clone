@@ -6,9 +6,12 @@
     <% @posts.each do |post| %>
       <div class="card ">
         <div class="card-body">
-          <p class="card-text"><%= post.content %></p>
+          <p class="card-text"><%= post.content %></p> 
         </div>  
-
+        <div class="card-body info">
+          <p>Author: <%= post.user.first_name %> </p> 
+          <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
+        </div> 
         <div class="card-body">
           <button class='btn btn-primary'><%= link_to 'Show', post %></button>
           <button class='btn btn-primary'><%= link_to 'Edit', edit_post_path(post) %></button>

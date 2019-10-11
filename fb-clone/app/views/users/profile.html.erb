@@ -6,7 +6,7 @@
     <%= render 'user' =%>
     <ul class="list-group">
       <li class="list-group-item">Name:  <%= @user.first_name%></li>
-      <li class="list-group-item">Date of birth:  <%= @user.date_of_birth%></li>
+      <li class="list-group-item">Date of birth:  <%= @user.date_of_birth.strftime("%m / %d / %Y")%></li>
       <li class="list-group-item">Gender:  <%= @user.gender%></li>
     </ul>  
   </aside>
