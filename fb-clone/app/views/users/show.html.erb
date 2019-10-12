@@ -1,0 +1,15 @@
+<% provide(:title, @user.first_name) %>
+
+<%= render 'layouts/alerts'%>
+
+ <h2>Post can't be empty<h2>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%- #will_paginate @posts -%>
+    <% end %>
+  </div>
+ <button class='prof btn btn-primary btn-lg btn-block'><%= link_to 'Go back', posts_path %></button>

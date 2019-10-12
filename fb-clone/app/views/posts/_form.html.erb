@@ -1,0 +1,13 @@
+<%= render 'layouts/alerts'%>
+ 
+<%= form_with(model: post, local: true) do |form| %>
+  
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content, :class=>"form-control" %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Post", :class=>"post btn btn-primary btn-lg btn-block" %>
+    </div>
+  <% end %>

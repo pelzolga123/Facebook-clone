@@ -1,0 +1,62 @@
+<div class = "container">
+<div class = "row">
+<div class = "col-md-4">
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class='form-row'>
+  <div class="form-group name">
+  <%= f.label :first_name %><br />
+  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name",  :class=>"form-control" %>
+  </div>
+
+  <div class="form-group name">
+  <%= f.label :last_name %><br />
+  <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name",  :class=>"form-control" %>
+  </div>
+ </div>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",  :class=>"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :date_of_birth %><br />
+  <div class='form-row'>
+  <%= f.date_select :date_of_birth, { :order => [:day, :month, :year], :start_year => Date.current.year + (10), :end_year => 1960,:prompt => {day: 'Day', month: 'Month', year: 'Year'} }, :class=>"form-control" %>
+  </div>
+  </div>
+
+  <div class="form-check">
+  <%= f.label :gender %><br />
+  <%= f.label :gender, 'Male' %>
+  <%= f.radio_button :gender, 'male', autocomplete: "gender", :class=>"form-check-input"%>
+  <%= f.label :gender, 'Female' %>
+  <%= f.radio_button :gender, "female", autocomplete: 'gender', :class=>"form-check-input"%>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.submit "Sign up", :class=>"btn btn-primary" %>
+  </div>
+<% end %>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <% if user_signed_in? %>
+            <div class='main-user'>
+             <div class="gravatar" style="background:transparent url(<%= gravatar_image_url(current_user.email.gsub('spam', 'mdeering'), size: 100) %>) 0px 0px no-repeat; width:100px; height:100px;"></div>
+             <h2> Hello, <%= current_user.first_name %> <h2>
+             <button class='btn btn-primary'> <%= link_to 'New Post', new_post_path %></button>
+             <button class='btn btn-primary'><%= link_to 'Edit profile', edit_user_registration_path(@user)%> </button>
+             </div>
+            <% end %>
+        </div>    
+
+        <div class="col-md-8">
+            <%= yield %>
+        </div>     
+    </div>  
+</div>
+
