@@ -55,7 +55,8 @@ group :development, :test do
   # The following two gems aid with the nuts and bolts
   # of interacting with the browser.
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  gem "chromedriver-helper"
+  gem 'shoulda-matchers', require: false
   gem 'webdrivers', '~> 4.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
