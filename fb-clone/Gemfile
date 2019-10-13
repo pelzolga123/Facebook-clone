@@ -42,19 +42,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'gravatar_image_tag'
 
 group :development, :test do
+
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem "capybara"
   gem 'rb-fsevent', '~> 0.10.3'
   # The RSpec testing framework
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
-  gem 'faker'
   gem 'pry'
   gem 'rspec-rails', '~> 3.8'
   gem 'guard-livereload', '~> 2.5', require: false
-  # Capybara, the library that allows us to interact with the browser using Ruby
-  gem 'capybara'
-  gem 'database_cleaner', '~> 1.7'
-  # The following two gems aid with the nuts and bolts
-  # of interacting with the browser.
-  gem 'selenium-webdriver'
+
+
+
   gem "chromedriver-helper"
   gem 'shoulda-matchers', require: false
   gem 'webdrivers', '~> 4.0'
@@ -71,6 +70,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+   # The following two gems aid with the nuts and bolts
+  # of interacting with the browser.
+  gem 'selenium-webdriver'
+  gem 'database_cleaner', '~> 1.7'
+  gem 'capybara-screenshot'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
