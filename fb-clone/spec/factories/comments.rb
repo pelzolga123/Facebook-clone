@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    content { "MyText" }
-    post { nil }
-    user { nil }
+    post
+    user
+    content { ' I Like your post on Rails framework ' }
   end
 end
