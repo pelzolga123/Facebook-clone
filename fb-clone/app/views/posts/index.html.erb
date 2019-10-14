@@ -17,5 +17,15 @@
           <button class='btn btn-primary'><%= link_to 'Edit', edit_post_path(post) %></button>
           <button class='btn btn-primary'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
         </div>
+          <div class="row"> <br>
+            <%= render "comments/form" ,post: post=%>  
+          </div>
+          <% post.comments.each do |comment| %>
+            <ol class='posts'>
+          <%= render 'comments/comment', comment: comment,post: post =%>
+        </ol>
+      <% end %>
       </div>
     <% end %>
+
+   

@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
 
+  resources :posts do
+    resources :comments
+  end
+
   devise_for :users, controllers: {registrations: "registrations"}, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
