@@ -12,9 +12,7 @@ class CommentsController < ApplicationController
       @comment = Comment.new
     end
   
-    def edit
-      @comment = @post.comments.find(params[:id])
-    end
+    def edit; end
 
     def create
         @comment = @post.comments.build(comment_params)
@@ -34,7 +32,7 @@ class CommentsController < ApplicationController
        @post = Post.find(params[:post_id])
        @comment = @post.comments.find(params[:id])
         respond_to do |format|
-          if @post.update(post_params)
+          if @comment.update(comment_params)
             format.html { redirect_to authenticated_root_path, notice: 'Comment updated.' }
             format.json { render :show, status: :ok, location: @post }
           else

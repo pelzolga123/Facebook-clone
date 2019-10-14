@@ -1,5 +1,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
  #error_explanation {
     color: red;
@@ -104,10 +105,65 @@
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid #DCDCDC;
   border-bottom: 1px solid #DCDCDC;
+
   p{
     color:#777;
-    font-size:16px;
+    font-size:14px;
+    margin:0;
+    padding:0;
   }
 }
+
+  .buttons{
+    display:flex;
+    justify-content: space-between;
+    .btn-info{
+      background-color:#DDA0DD;
+      border: 1px solid #DDA0DD;
+    }
+    .comment-count{
+      border: 2px solid #DDA0DD;
+      border-radius: 7px;
+      padding: 7px 7px;
+    }
+  }
+
+.comment-body{
+ display:flex;
+ justify-content: space-between;
+
+ .field{
+   width:80%;
+ }
+}
+.comments{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .left{
+    width:81%;
+  }
+  .right{
+    .btn{
+      border: 2px solid #DDA0DD;
+      background-color: #fff;
+      padding: 6px 10px;
+      a{
+        color: #221177;
+      }
+    }
+  }
+  .posts{
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    padding:10px 10px;
+    margin-bottom: 0;
+    .user{
+      font-weight: 600;
+      color:#221177;
+      font-size: 16px;
+    }
+  }
+} 
