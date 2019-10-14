@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts, foreign_key: :user_id, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

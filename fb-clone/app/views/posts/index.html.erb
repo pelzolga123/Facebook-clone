@@ -16,6 +16,13 @@
           <button class='btn btn-primary'><%= link_to 'Show', post %></button>
           <button class='btn btn-primary'><%= link_to 'Edit', edit_post_path(post) %></button>
           <button class='btn btn-primary'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+        <div>
+          <%= link_to raw('<i class="fa fa-thumbs-up">.</i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
+          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+          <%= link_to (fa_icon "comment"), "#", class: "btn btn-info" %> 
+          Comments: <%= post.comments.count =%>   
+        </div>  
         </div>
           <div class="row"> <br>
             <%= render "comments/form" ,post: post=%>  
