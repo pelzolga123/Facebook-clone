@@ -16,13 +16,13 @@ class LikesController < ApplicationController
       @like = @post.likes.build(like_params)
       @like.user = current_user
       respond_to do |format|
-      if @like.save!
-        format.html { redirect_to request.referer }
-        format.json { render :show, status: :created, location: @post, alert: 'Post liked!' }
-      else
-        format.html { redirect_to authenticated_root_path, alert: 'No like!' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+        if @like.save!
+          format.html { redirect_to request.referer }
+          format.json { render :show, status: :created, location: @post, alert: 'Post liked!' }
+        else
+          format.html { redirect_to authenticated_root_path, alert: 'No like!' }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

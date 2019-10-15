@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'CreatePosts', type: :feature do
-
   before :each do
     User.create(first_name: 'john',
                 last_name: 'johnson',
