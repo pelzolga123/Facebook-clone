@@ -5,5 +5,5 @@ class Comment < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { minimum: 5, maximum: 300 }
 
-  #default_scope -> { order(created_at: :desc) }
+  # default_scope -> { order(created_at: :desc) }
 end

@@ -2,30 +2,31 @@ class LikesController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
 
-    def new
-        @like = Like.new(like_params)
-    end
+  def new
+    @like = Like.new(like_params)
+  end
 
-    def create
-        if already_liked?
-            respond_to do |format|
-              format.html { redirect_to request.referer, alert: 'Liked' }
-            end
-        else
-        @post = Post.find(params[:post_id])
-        @like = @post.likes.build(like_params)
-        @like.user = current_user
-        respond_to do |format|
-          if @like.save!
-            format.html { redirect_to request.referer }
-            format.json { render :show, status: :created, location: @post, alert: 'Post liked!' }
-          else
-            format.html { redirect_to authenticated_root_path, alert: 'No like!' }
-            format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
+  def create
+    if already_liked?
+      respond_to do |format|
+        format.html { redirect_to request.referer, alert: 'Liked' }
       end
-    end 
- end
+    else
+      @post = Post.find(params[:post_id])
+      @like = @post.likes.build(like_params)
+      @like.user = current_user
+      respond_to do |format|
+      if @like.save!
+        format.html { redirect_to request.referer }
+        format.json { render :show, status: :created, location: @post, alert: 'Post liked!' }
+      else
+        format.html { redirect_to authenticated_root_path, alert: 'No like!' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+      end
+    end
+  end
+
   private
 
   def set_post
