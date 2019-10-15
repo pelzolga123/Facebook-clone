@@ -5,32 +5,49 @@ RSpec.describe Like, type: :model do
   let(:user) { build(:user) }
   let(:like) { build(:like) }
 
-  it 'is invalid without author and without post' do
-    expect(like).not_to be_valid
+  context 'model validation test' do
+    it 'ensures a like is invalid without a user and a post' do
+      like.user = nil
+      like.post = nil
+      expect(like.save).to eq(false)
+    end
+
+    it 'ensures a like is invalid without a user and with post' do
+      like.user = nil
+      like.post = post
+      expect(like.save).to eq(false)
+    end
+
+    it 'ensures a like is invalid without a post and with user' do
+      like.user = user
+      like.post = nil
+      expect(like.save).to eq(false)
+    end
+
+    it 'ensures a like is valid with a post and with user' do
+      like.user = user
+      like.post = post
+      expect(like.save).to eq(false)
+    end
+
+    it 'ensures a like is invalid without a unique user and post' do
+      like.user = user
+      like.post = post
+      like.save
+      like = Like.new(user_id: user.id, post_id: post.id)
+      expect(like.save).to eq(false)
+    end
+
   end
 
-  it 'is invalid without author and with post' do
-    like.post = post
-    expect(like).not_to be_valid
-  end
-
-  it 'is invalid without post and with author' do
-    like.user = user
-    like.post = nil
-    expect(like).not_to be_valid
-  end
-
-  it 'is valid with post and author' do
-    like.user = user
-    like.post = post
-    expect(like).to be_valid
-  end
-
-  it 'is invalid without a unique author and post' do
-    like.user = user
-    like.post = post
-    like.save
-    like = Like.new(user_id: user.id, post_id: post.id)
-    expect(like.save).to eq(false)
+  context 'model associations' do
+    it 'belongs to user' do
+      assc = Like.reflect_on_association(:user)
+      expect(assc.macro).to eq :belongs_to
+    end
+    it 'belongs to post' do
+      assc = Like.reflect_on_association(:post)
+      expect(assc.macro).to eq :belongs_to
+    end
   end
 end

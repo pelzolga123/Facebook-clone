@@ -20,9 +20,16 @@ RSpec.describe Comment, type: :model do
       comment.post = nil
       expect(comment.save).to eq(false)
     end
+
+
+    it 'ensures a comment is invalid without a user and with a post' do
+      comment.user = nil
+      comment.post = post
+      expect(comment.save).to eq(false)
+    end
   end
 
-  context 'Comment model associations' do
+  context 'model associations' do
     it 'belongs to user' do
       assc = Comment.reflect_on_association(:user)
       expect(assc.macro).to eq :belongs_to
