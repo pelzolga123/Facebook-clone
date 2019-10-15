@@ -5,7 +5,7 @@ FactoryBot.define do
     gender { 'male' }
     date_of_birth { '15/10/2000' }
     email { 'mhartl@example.com' }
-    #sequence(:email) { |n| 'tester_#{n}@example.com' }
+    # sequence(:email) { |n| 'tester_#{n}@example.com' }
     password { 'foobar' }
     password_confirmation { 'foobar' }
   end

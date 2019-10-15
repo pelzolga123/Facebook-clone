@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-
   context 'model validation test' do
     let(:post) { build(:post) }
     let(:user) { build(:user) }
     let(:comment) { build(:comment) }
-
 
     it 'ensures a comment is invalid without a user and a post' do
       comment.user = nil
@@ -14,13 +12,11 @@ RSpec.describe Comment, type: :model do
       expect(comment.save).to eq(false)
     end
 
-
     it 'ensures a comment is invalid without a post and with a user' do
       comment.user = user
       comment.post = nil
       expect(comment.save).to eq(false)
     end
-
 
     it 'ensures a comment is invalid without a user and with a post' do
       comment.user = nil
@@ -39,6 +35,4 @@ RSpec.describe Comment, type: :model do
       expect(assc.macro).to eq :belongs_to
     end
   end
-
-
 end
