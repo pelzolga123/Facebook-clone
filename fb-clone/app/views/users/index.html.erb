@@ -2,18 +2,22 @@
 
   <% @users.each do |user| %>
    
-   <div class='users'>
+   
    <% if current_user != user %>
+    <div class='users'>
     <div class="gravatar" style="background:transparent url(<%= gravatar_image_url(user.email.gsub('spam', 'mdeering'), size: 100) %>) 0px 0px no-repeat; width:100px; height:100px;"></div>
-      <h2 class="user"><%= link_to user.first_name, user %></h2>
+    <h2 class="user"><%= link_to user.first_name, user %></h2>
+
       <br>
+
       <% if !@accepted_users.nil? && @accepted_users.include?(user)%> <hr>
-      <h3>Friends</h3>
+      <a class='success'>Friends</a>
       <% elsif !@pending_users.nil? && @pending_users.include?(user)%> <hr>
-      <h3>Waiting for responce<h3>
+      <a class='pending'>Waiting for responce</a>
       <% elsif !@friendships_users.nil? && !@friendships_users.include?(user)%> <hr>
-      <%= link_to 'Add friend', friendship_path(id: user.id), method: :post, class: 'btn' %>
-    <% end %> 
+      <%= link_to 'Add friend', friendship_path(id: user.id), method: :post, class: 'btn btn-primary' %>
+      <% end %>
+
   </div> 
   <%end%>
 <% end %>
