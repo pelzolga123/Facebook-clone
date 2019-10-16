@@ -1,15 +1,15 @@
 <% provide(:title, @user.first_name) %>
 
-<%= render 'layouts/alerts'%>
-
- <h2>Post can't be empty<h2>
-  <div class="col-md-8">
-    <% if @user.posts.any? %>
-      
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-      <%- #will_paginate @posts -%>
-    <% end %>
-  </div>
- <button class='prof btn btn-primary btn-lg btn-block'><%= link_to 'Go back', posts_path %></button>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render 'user' =%>
+    <ul class="list-group">
+      <li class="list-group-item">Name:  <%= @user.first_name%></li>
+      <li class="list-group-item">Date of birth:  <%= @user.date_of_birth.strftime("%m / %d / %Y")%></li>
+      <li class="list-group-item">Gender:  <%= @user.gender%></li>
+    </ul>  
+  </aside>
+</div>
+<% if current_user == @user %>
+<button class='prof btn btn-primary'><%= link_to 'Edit', edit_user_registration_path(@user)%> </button>
+<%end%>

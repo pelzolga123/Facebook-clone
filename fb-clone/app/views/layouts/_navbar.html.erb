@@ -8,6 +8,13 @@
           <li class="nav-item active"><%= link_to 'My profile',profile_path(current_user), :class=> "nav-link" %></li> 
           <li class="nav-item active"><%= link_to 'Posts',:posts, :class=> "nav-link" %></li> 
           <li class="nav-item active"><%= link_to 'Sign out', destroy_user_session_path, :method => 'delete', :class=> "nav-link" %></li> 
+          <% if !@expected.nil? %>
+          <% @expected.each do |friend| %>
+            <li class="request-list" role="presentation"><span role="menuitem" tabindex="-1" ><%= friend.user.first_name %></span>
+                                    <span class="btn btn-success btn-xs "><%= link_to 'accept', friendship_path(id: friend.id), method: :patch %></span>
+            </li>
+            <% end %>
+          <% end %>
         <% else %>
           <li class="nav-item active"><%= link_to 'Log in' , new_user_session_path, :class=> "nav-link" %></li> 
           <li class="nav-item active"><%= link_to 'Sign up' , new_registration_path(resource_name), :class=> "nav-link" %></li>

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   
   resources :users, only: %i[index show]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
+  post '/friendship', to: 'users#request_friend'
+  patch '/friendship', to: 'users#accept_friend'
+
 
   resources :posts do
     resources :comments
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes
   end
+
 
   devise_for :users, controllers: {registrations: "registrations"}, path: '', path_names: {sign_in: 'login', sign_out: 'logout'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

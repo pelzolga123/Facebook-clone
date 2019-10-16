@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   before_action :authorized_to_edit_destroy?, only: %i[edit destroy]
+  before_action :find_friends
 
   def index
     @posts = Post.all
