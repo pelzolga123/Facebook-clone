@@ -5,17 +5,52 @@
 
     <% @posts.each do |post| %>
       <div class="card ">
+
+      <div class="card-body info">
+        <p>Author: <%= post.user.first_name %> </p> 
+        <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
+      </div>
+
         <div class="card-body">
           <p class="card-text"><%= post.content %></p> 
         </div>  
-        <div class="card-body info">
-          <p>Author: <%= post.user.first_name %> </p> 
-          <p>Date: <%= post.created_at.to_formatted_s(:short) %> UTC </p> 
-        </div> 
-        <div class="card-body">
+         
+        <div class="card-body buttons">
+        <div>
+          <% if current_user == post.user %>
           <button class='btn btn-primary'><%= link_to 'Show', post %></button>
           <button class='btn btn-primary'><%= link_to 'Edit', edit_post_path(post) %></button>
           <button class='btn btn-primary'><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          <% end %>
         </div>
+
+        <div>
+          <%= link_to raw('<i class="fa fa-heart"></i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
+          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+          <span class='comment-count'>Comments: <%= post.comments.count =%> </span>
+        </div>  
+
+        </div>
+          <div class='card-body'> <br>
+            <%= render "comments/form" ,post: post=%>  
+          </div>
+          
+          <% post.comments.each do |comment| %>
+          <div class='comments'>   
+          <div class='card-body left'>  
+          <ol class='posts'>
+          <%= render 'comments/comment', comment: comment,post: post =%>
+          </ol>
+          </div>
+          <div class='card-body right'>
+          <% if current_user == comment.user %>
+          <button class='btn'><%= link_to 'Edit', edit_post_comment_path(post, comment) %></button>
+          <button class='btn'><%= link_to 'Delete', post_comment_path(post, comment), method: :delete %></button>
+          <% end%>
+          </div>
+          </div>
+      <% end %>
       </div>
     <% end %>
+
+   

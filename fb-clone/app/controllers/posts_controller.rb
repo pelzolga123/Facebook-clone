@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
+  before_action :authorized_to_edit_destroy?, only: %i[edit destroy]
 
   def index
     @posts = Post.all
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to authenticated_root_path, notice: 'Post was successfully created.' }
@@ -56,5 +58,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:content, :picture)
+  end
+
+  def authorized_to_edit_destroy?
+    redirect_to :authenticated_root unless @post.user_id == current_user.id
   end
 end

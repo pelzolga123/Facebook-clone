@@ -1,0 +1,11 @@
+ 
+    <%= form_for [post, @comment] do |form| %>
+      <div class='comment-body'> 
+        <div class="field">
+          <%= form.text_area :content, :class=>"form-control" %>
+        </div>
+        <div class="actions">
+          <%= form.submit "Comment", :class=>"post btn btn-primary" %>
+        </div>
+        </div>
+    <% end %>
