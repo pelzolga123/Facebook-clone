@@ -8,7 +8,7 @@
           <li class="nav-item active"><%= link_to 'My profile',profile_path(current_user), :class=> "nav-link" %></li> 
           <li class="nav-item active"><%= link_to 'Posts',:posts, :class=> "nav-link" %></li> 
           <li class="nav-item active"><%= link_to 'Sign out', destroy_user_session_path, :method => 'delete', :class=> "nav-link" %></li> 
-          <% if !@expected.nil? %>
+          <% if !@expected.empty? %>
           <div class='dropdown'>
               <li class="nav-item active"> Friends requests </li> 
           <div class="dropdown-content"> 

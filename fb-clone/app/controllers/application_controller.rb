@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
     @accepted = @friendships.select { |friendship| friendship.confirmed }
     @accepted_users = @accepted.map { |friend| friend.friend }
     @expected = current_user.inverse_friendships.select{ |friendship| !friendship.confirmed }
-
     @expected_users = @expected.map { |expected| expected.friend }
   end
 end
