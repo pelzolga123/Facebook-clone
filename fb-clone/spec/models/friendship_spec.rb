@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Friendship, type: :model do
-
-
   context 'Validation tests' do
     let(:user) { build(:user) }
     let(:friendship) { build(:friendship) }
@@ -25,5 +23,4 @@ RSpec.describe Friendship, type: :model do
       expect(friendship.save).to eq(false)
     end
   end
-
 end
