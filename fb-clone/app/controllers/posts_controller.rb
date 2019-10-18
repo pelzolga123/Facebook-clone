@@ -7,12 +7,18 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = current_user.posts
+    @friends_posts = @accepted_users.map(&:posts).flatten!
+    @posts += @friends_posts if @friends_posts
   end
 
   def show; end
 
   def new
     @post = Post.new
+    @posts = current_user.posts
+    @friends_posts = @accepted_users.map(&:posts).flatten!
+    @posts += @friends_posts if @friends_posts
   end
 
   def edit; end
