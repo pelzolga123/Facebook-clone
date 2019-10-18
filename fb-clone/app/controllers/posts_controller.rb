@@ -3,8 +3,13 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
   before_action :authorized_to_edit_destroy?, only: %i[edit destroy]
+  before_action :find_friends
 
   def index
+    @posts = current_user.posts
+    @friends_posts = @accepted_users.map(&:posts).flatten!
+    @posts += @friends_posts if @friends_posts
+    (@posts&.sort_by { |key| key.created_at }).reverse!
     @posts = Post.all
   end
 
@@ -12,6 +17,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = current_user.posts
+    @friends_posts = @accepted_users.map(&:posts).flatten!
+    @posts += @friends_posts if @friends_posts
   end
 
   def edit; end
@@ -24,7 +32,7 @@ class PostsController < ApplicationController
         format.html { redirect_to authenticated_root_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { redirect_to current_user, alert: 'post not created' }
+        format.html { redirect_to new_post_path, alert: 'post not created' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
