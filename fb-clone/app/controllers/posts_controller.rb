@@ -6,10 +6,11 @@ class PostsController < ApplicationController
   before_action :find_friends
 
   def index
-    @posts = Post.all
     @posts = current_user.posts
     @friends_posts = @accepted_users.map(&:posts).flatten!
     @posts += @friends_posts if @friends_posts
+    (@posts&.sort_by { |key| key.created_at }).reverse!
+    @posts = Post.all
   end
 
   def show; end
