@@ -6,9 +6,7 @@ class PostsController < ApplicationController
   before_action :find_friends
 
   def index
-    @posts = current_user.posts
-    @friends_posts = @accepted_users.map(&:posts).flatten!
-    @posts += @friends_posts if @friends_posts
+    @posts = Post.all
   end
 
   def show; end
@@ -27,7 +25,7 @@ class PostsController < ApplicationController
         format.html { redirect_to authenticated_root_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { redirect_to current_user, alert: 'post not created' }
+        format.html { redirect_to new_post_path, alert: 'post not created' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
