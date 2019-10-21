@@ -333,6 +333,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  omniauth
   omniauth-facebook
   pg (>= 0.18, < 2.0)
   pry
