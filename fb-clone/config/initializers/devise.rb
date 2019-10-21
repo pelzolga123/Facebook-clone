@@ -298,4 +298,9 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   #config.omniauth :facebook, "App ID", "App Secret", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+
+  config.omniauth :facebook,
+  ENV['FACEBOOK_APP_ID'],
+  ENV['FACEBOOK_APP_SECRET'],
+  callback_url:  "https://fake-social-media.herokuapp.com/users/auth/facebook/callback"
 end
