@@ -264,7 +264,7 @@ Devise.setup do |config|
 
   # config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: 'https://fake-social-media.herokuapp.com/users/auth/facebook/callback'
 
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "https://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, '707376773080181', "5bbac17e82ba7d780808456eebd1b43f", callback_url: "https://localhost:3000/users/auth/facebook/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
