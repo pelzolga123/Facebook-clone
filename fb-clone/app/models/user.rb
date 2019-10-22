@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+         :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_many :posts, foreign_key: :user_id, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -14,7 +14,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :date_of_birth, presence: true
   validates :gender, presence: true
-
 
   def self.new_with_session(params, session)
     super.tap do |user|
