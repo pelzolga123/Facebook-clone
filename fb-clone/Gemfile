@@ -42,7 +42,7 @@ gem "font-awesome-rails"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'gravatar_image_tag'
 
-gem 'figaro'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
 

@@ -328,7 +328,7 @@ DEPENDENCIES
   devise
   factory_bot_rails (~> 5.1, >= 5.1.1)
   faker
-  figaro
+  figaro (~> 1.1, >= 1.1.1)
   font-awesome-rails
   gravatar_image_tag
   guard
