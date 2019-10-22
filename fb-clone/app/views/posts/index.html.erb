@@ -24,7 +24,7 @@
 
         <div>
           <%= link_to raw('<i class="fa fa-heart"></i>'), post_likes_path(post), method: :post, class: "btn btn-info" %>
-          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+          <%=  post.likes_count %> <%= (post.likes_count) == 1 ? 'Like' : 'Likes'%>
           <span class='comment-count'>Comments: <%= post.comments.count =%> </span>
         </div>  
 
