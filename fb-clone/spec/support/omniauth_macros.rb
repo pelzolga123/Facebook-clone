@@ -6,8 +6,9 @@ module OmniauthMacros
       'provider' => 'facebook',
       'uid' => '123545',
       'user_info' => {
-        'name' => 'mockuser',
-        'image' => 'mock_user_thumbnail_url'
+        'first_name' => 'mockuser',
+        'last_name' => 'mockuser'
+        #'image' => 'mock_user_thumbnail_url'
       },
       'credentials' => {
         'token' => 'mock_token',
