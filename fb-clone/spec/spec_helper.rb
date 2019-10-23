@@ -116,7 +116,5 @@ RSpec.configure do |config|
   config.before(:all) do
     FactoryBot.reload
   end
-
-  config.include(OmniauthMacros)
 end
-OmniAuth.config.test_mode = true
+
