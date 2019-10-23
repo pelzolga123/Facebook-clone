@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
   post '/friendship', to: 'users#request_friend'
   patch '/friendship', to: 'users#accept_friend'
-  #get '/users/auth/facebook/callback', to: redirect('/auth/facebook/callback')
+  get '/users/auth/facebook/callback', to: redirect('/auth/facebook/callback')
 
 
   resources :posts do
