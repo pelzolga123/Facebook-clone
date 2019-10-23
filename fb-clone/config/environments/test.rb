@@ -43,4 +43,20 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  OmniAuth.config.test_mode = true
+  # authentication hashes to return during integration testing.
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+  {
+    'provider' => 'facebook',
+    'uid' => '123545',
+    'user_info' => {
+      'name' => 'mockuser',
+      'image' => 'mock_user_thumbnail_url'
+    },
+    'credentials' => {
+      'token' => 'mock_token',
+      'secret' => 'mock_secret'
+    }
+  })
 end
