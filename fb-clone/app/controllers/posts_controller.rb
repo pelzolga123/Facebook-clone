@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @friends_posts = @accepted_users.map(&:posts).flatten!
     @posts += @friends_posts if @friends_posts
     (@posts&.sort_by { |key| key.created_at }).reverse!
-    @posts = Post.all
   end
 
   def show; end

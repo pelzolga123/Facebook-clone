@@ -41,10 +41,12 @@ gem "font-awesome-rails"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'gravatar_image_tag'
 
+# gem 'figaro', '~> 1.1', '>= 1.1.1'
+
 group :development, :test do
 
   # Capybara, the library that allows us to interact with the browser using Ruby
-  gem "capybara"
+  gem 'capybara'
   gem 'rb-fsevent', '~> 0.10.3'
   # The RSpec testing framework
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'

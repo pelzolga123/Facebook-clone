@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 2019_10_21_154015) do
     t.string "last_name"
     t.datetime "date_of_birth"
     t.string "gender"
+    t.string "provider"
+    t.string "uid"
+    t.text "image"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
