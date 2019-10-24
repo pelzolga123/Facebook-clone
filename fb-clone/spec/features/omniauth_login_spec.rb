@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'helpers/omniauth_helper_spec'
+require 'support/omniauth_helper'
 
 RSpec.feature 'OmniauthLogins', type: :feature do
   context 'with valid credentials' do
