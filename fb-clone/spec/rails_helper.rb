@@ -8,8 +8,6 @@ require 'factory_bot_rails'
 require 'support/factory_bot'
 require 'database_cleaner'
 
-
-
 FactoryBot.definition_file_paths << File.join(File.dirname(__FILE__), 'factories')
 FactoryBot.find_definitions
 
