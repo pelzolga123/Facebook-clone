@@ -117,4 +117,3 @@ RSpec.configure do |config|
     FactoryBot.reload
   end
 end
-

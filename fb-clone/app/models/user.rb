@@ -10,10 +10,8 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  validates :first_name, presence: true, unless: -> { has_facebook_linked? }
-  validates :last_name, presence: true, unless: -> { has_facebook_linked? }
-  # validates :date_of_birth, presence: true, unless: -> { has_facebook_linked? }
-  # validates :gender, presence: true, unless: -> { has_facebook_linked? }
+  validates :first_name, presence: true, unless: -> { facebook_linked? }
+  validates :last_name, presence: true, unless: -> { facebook_linked? }
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -34,7 +32,7 @@ class User < ApplicationRecord
     end
   end
 
-  def has_facebook_linked?
-    self.provider.present? && self.uid.present?
+  def facebook_linked?
+    provider.present? && uid.present?
   end
 end
