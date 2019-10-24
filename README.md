@@ -45,7 +45,6 @@ The technical goals of the project were to be able to emulate some of the functi
 - Remove friends.
 - Add posts.
 - Add comment to posts.
-- Having newsfeed page based on the friends list.
 - Ability to login with facebook.
 - Edit setting and profile information.
 
