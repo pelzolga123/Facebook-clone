@@ -5,8 +5,12 @@
     <%= render 'user' =%>
     <ul class="list-group">
       <li class="list-group-item">Name:  <%= @user.first_name%></li>
+      <% if  !@user.date_of_birth.nil?%>
       <li class="list-group-item">Date of birth:  <%= @user.date_of_birth.strftime("%m / %d / %Y")%></li>
+      <% end %>
+      <% if  !@user.gender.nil?%>
       <li class="list-group-item">Gender:  <%= @user.gender%></li>
+      <% end %>
     </ul>  
   </aside>
 </div>
