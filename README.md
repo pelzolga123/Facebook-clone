@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <h1 align="center">fake-social-media</h1>
+  <h1 align="center">Facebook-clone</h1>
 
   <p align="center">
     A Ruby on Rails application
