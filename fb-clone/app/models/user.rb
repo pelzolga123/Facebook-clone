@@ -12,8 +12,8 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true, unless: -> { has_facebook_linked? }
   validates :last_name, presence: true, unless: -> { has_facebook_linked? }
-  validates :date_of_birth, presence: true, unless: -> { has_facebook_linked? }
-  validates :gender, presence: true, unless: -> { has_facebook_linked? }
+  # validates :date_of_birth, presence: true, unless: -> { has_facebook_linked? }
+  # validates :gender, presence: true, unless: -> { has_facebook_linked? }
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -28,8 +28,9 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
-      # user.first_name = auth.info.first_name
       user.image = auth.info.image
+      user.first_name = auth.info.name.split.first
+      user.last_name = auth.info.name.split.last
     end
   end
 
