@@ -6,7 +6,7 @@
     A Ruby on Rails application
     <br />
     <br />
-    <a href=" https://sheltered-taiga-65616.herokuapp.com/">View Demo</a>
+    <a href="https://sheltered-taiga-65616.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/pelzolga123/Facebook-clone/issues">Report Bug</a>
     ·
