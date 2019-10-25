@@ -65,6 +65,11 @@ Finally, run the app in a local server:
 ```sh
 $ rails server
 ```
+<!-- Live version -->
+
+[Demo](https://sheltered-taiga-65616.herokuapp.com/)
+
+
 ## Contact
 * [Olga Pelts](https://github.com/pelzolga123) & [Tunde Oretade](https://github.com/tundeiness)
 
