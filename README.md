@@ -12,8 +12,8 @@
     ·
     <a href="https://github.com/pelzolga123/Facebook-clone/issues">Request Feature</a>
   </p>
+  <img src="https://i.ibb.co/wK2KyZm/facebook-project.png" alt="facebook-project">
 </p>
-
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
