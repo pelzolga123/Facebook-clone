@@ -15,18 +15,6 @@
   <img src="https://i.ibb.co/wK2KyZm/facebook-project.png" alt="facebook-project">
 </p>
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-  * [Features](#Features)
-* [Getting Started](#getting-started)
-* [Contact](#Contact)
-* [License](#license)
-
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -69,13 +57,34 @@ $ rails server
 
 [Demo](https://sheltered-taiga-65616.herokuapp.com/)
 
+## Authors
 
-## Contact
-* [Olga Pelts](https://github.com/pelzolga123) & [Tunde Oretade](https://github.com/tundeiness)
+👤 **Olga Pelts**
+   - Github: [@pelzolga123](https://github.com/pelzolga123)
+   - LinkedIn: [Olga Pelts](https://www.linkedin.com/in/olga-pelts/)
 
+👤 **Tunde Oretade**
+   - Github: [@tundeiness](https://github.com/tundeiness)
+   - LinkedIn: [Tunde Oretade](https://www.linkedin.com/in/tundeoretade/)
 
 <!-- LICENSE -->
-## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/pelzolga123/Facebook-clone/issues).
+
+1. Fork it (https://github.com/pelzolga123/Bookstore/fork)
+2. Create your working branch (git checkout -b [choose-a-name])
+3. Commit your changes (git commit -am 'what this commit will fix/add')
+4. Push to the branch (git push origin feature/[feature-name])
+5. Create a new Pull Request
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
 
