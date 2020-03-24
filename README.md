@@ -58,7 +58,7 @@ Finally, run the app in a local server:
 $ rails server
 ```
 ### Testing project
-* run tests
+* Run tests
 
 ```sh
 rspec
