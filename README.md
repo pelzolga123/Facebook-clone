@@ -24,7 +24,7 @@ fake social web is our implementation of facebook using Ruby on Rails. It is a p
 The technical goals of the project were to be able to emulate some of the functionalities that facebook has implemented, such as allowing the users to have friends in a symmetrical irreflexive way, accept & send friend requests, submit posts and see the posts of their friends and comment on the posts of their friends.
 
 ### Built With
-* [RubyonRails](https://rubyonrails.org/)
+* [Ruby on Rails](https://rubyonrails.org/)
 
 
 ### Features
@@ -36,6 +36,10 @@ The technical goals of the project were to be able to emulate some of the functi
 - Ability to login with facebook.
 - Edit setting and profile information.
 
+### Future features
+* Users can upload profile photo.
+* Users can create posts with image.
+* Users can add comments with icons.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -52,6 +56,12 @@ $ rails db:migrate
 Finally, run the app in a local server:
 ```sh
 $ rails server
+```
+### Testing project
+* run tests
+
+```sh
+rspec
 ```
 ## Live version
 
