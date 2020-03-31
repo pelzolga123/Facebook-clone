@@ -19,9 +19,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-fake social web is our implementation of facebook using Ruby on Rails. It is a project developed while in [microverse](http://microverse.org/) software development bootcamp. 
+The fake social web is our implementation of Facebook using Ruby on Rails. It is a project developed while in [microverse](http://microverse.org/) software development Bootcamp. 
 
-The technical goals of the project were to be able to emulate some of the functionalities that facebook has implemented, such as allowing the users to have friends in a symmetrical irreflexive way, accept & send friend requests, submit posts and see the posts of their friends and comment on the posts of their friends.
+The technical goals of the project were to be able to emulate some of the functionalities that Facebook has implemented, such as allowing the users to have friends in a symmetrical irreflexive way, accept & send friend requests, submit posts and see the posts of their friends and comment on the posts of their friends.
 
 ### Built With
 * [Ruby on Rails](https://rubyonrails.org/)
@@ -32,13 +32,13 @@ The technical goals of the project were to be able to emulate some of the functi
 - Accepting friend requests.
 - Remove friends.
 - Add posts.
-- Add comment to posts.
-- Ability to login with facebook.
+- Add comments to posts.
+- Ability to login with Facebook.
 - Edit setting and profile information.
 
 ### Future features
-* Users can upload profile photo.
-* Users can create posts with image.
+* Users can upload profile photos.
+* Users can create posts with images.
 * Users can add comments with icons.
 
 <!-- GETTING STARTED -->
